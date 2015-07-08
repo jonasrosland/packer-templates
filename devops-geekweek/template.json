@@ -28,8 +28,8 @@
     {
       "type": "atlas",
       "token": "{{user `atlas_token`}}",
-      "artifact": "hashicorp/foobar",
-      "artifact_type": "amazon.ami",
+      "artifact": "jonasrosland/dogw",
+      "artifact_type": "vagrant.box",
       "metadata": {
         "created_at": "{{timestamp}}"
       }
