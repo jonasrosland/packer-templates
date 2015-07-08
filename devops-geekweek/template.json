@@ -17,7 +17,7 @@
     }
   ],
   "post-processors": [
-    {
+    [{
       "type": "vagrant",
       "override": {
         "virtualbox": {
@@ -33,7 +33,7 @@
       "metadata": {
         "created_at": "{{timestamp}}"
       }
-    }
+    }]
   ],
   "builders": [
     {
