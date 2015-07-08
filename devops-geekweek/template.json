@@ -11,14 +11,6 @@
             "scripts/virtualbox.sh",
             "scripts/cleanup.sh"
           ]
-        },
-        "vmware-iso": {
-          "scripts": [
-            "scripts/base.sh",
-            "scripts/vagrant.sh",
-            "scripts/vmware.sh",
-            "scripts/cleanup.sh"
-          ]
         }
       }
     }
@@ -29,9 +21,6 @@
       "override": {
         "virtualbox": {
           "output": "centos-7-1-x64-virtualbox.box"
-        },
-        "vmware": {
-          "output": "centos-7-1-x64-vmware.box"
         }
       }
     }
@@ -60,30 +49,6 @@
         [ "modifyvm", "{{.Name}}", "--memory", "512" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
       ]
-    },
-    {
-      "type": "vmware-iso",
-      "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
-      ],
-      "boot_wait": "10s",
-      "disk_size": 40520,
-      "guest_os_type": "centos-64",
-      "http_directory": "http",
-      "iso_checksum": "1795184136b8bdddabe50453cc2cc2d46f0f7c5e",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://ftp.iij.ad.jp/pub/linux/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-DVD-1503-01.iso",
-      "ssh_username": "vagrant",
-      "ssh_password": "vagrant",
-      "ssh_port": 22,
-      "ssh_wait_timeout": "10000s",
-      "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
-      "tools_upload_flavor": "linux",
-      "vmx_data": {
-        "memsize": "512",
-        "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
-      }
     }
   ]
 }
