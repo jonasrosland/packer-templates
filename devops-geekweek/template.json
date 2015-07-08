@@ -24,6 +24,15 @@
           "output": "dogw-virtualbox.box"
         }
       }
+    },
+    {
+      "type": "atlas",
+      "token": "{{user `atlas_token`}}",
+      "artifact": "hashicorp/foobar",
+      "artifact_type": "amazon.ami",
+      "metadata": {
+        "created_at": "{{timestamp}}"
+      }
     }
   ],
   "builders": [
